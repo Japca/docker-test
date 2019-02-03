@@ -1,10 +1,12 @@
 sudo: required
 services:
   - docker
-  - gem
 
 before_install:
   - docker build -t japca/docker-test -f Dockerfile.dev .
 
 scripr:
+  - 'gem install bundler'
+  - 'rake spec'
   - docker run japca/docker-test npm run test -- --coverage
+
