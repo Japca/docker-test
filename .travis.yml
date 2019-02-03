@@ -3,8 +3,8 @@ services:
   - docker
 
 before_install:
+  - 'sudo gem install bundler'
   - docker build -t japca/docker-test -f Dockerfile.dev .
 
 scripr:
-  - 'sudo gem install bundler'
   - docker run japca/docker-test npm run test -- --coverage
