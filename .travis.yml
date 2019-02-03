@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t Japca/docker-test -f Dockerfile.dev .
+  - docker build -t japca/docker-test -f Dockerfile.dev .
 
 scripr:
-  -docker run Japca/docker-test npm run test -- --coverage
+  -docker run japca/docker-test npm run test -- --coverage
