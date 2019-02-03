@@ -1,9 +1,9 @@
 sudo: required
 services:
   - docker
+  - gem
 
 before_install:
-  - 'sudo gem install bundler'
   - docker build -t japca/docker-test -f Dockerfile.dev .
 
 scripr:
